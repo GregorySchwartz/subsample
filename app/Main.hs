@@ -23,7 +23,7 @@ import Options.Generic
 import qualified Data.ByteString.Lazy.Char8 as BL
 import qualified Data.Text as T
 import qualified Data.Vector as V
-       
+
 -- Local
 import Types
 import Load
@@ -44,8 +44,8 @@ instance ParseRecord Options
 main :: IO ()
 main = do
     opts <- getRecord "subsample, Gregory W. Schwartz.\
-                      \ Subsample data from a uniform distribution so two\
-                      \ different statuses for all entities have the same\
+                      \ Subsample data from a uniform distribution so all\
+                      \ statuses for all entities have the same\
                       \ number of samples."
 
     contents <- BL.getContents
@@ -59,9 +59,9 @@ main = do
         statusMap            = getStatusMap statusCol' sampleCol' rows
         smallest             =
             maybe (smallestSampleNum statusMap) Size . unHelpful . n $ opts
-        
+
     validSamples <- getSubsampling smallest statusMap
-        
+
     let outputBody = filterRowsValid
                         (unSampleCol sampleCol')
                         (Set.map unSample validSamples)
