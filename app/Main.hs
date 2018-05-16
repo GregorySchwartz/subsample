@@ -1,7 +1,8 @@
 {- subsample
 Gregory W. Schwartz
 
-Subsample data from a uniform distribution so two different statuses for the same entity have the same number of samples.
+Subsample data from a uniform distribution so two different statuses for the
+same entity have the same number of samples. Takes csv stdin.
 -}
 
 {-# LANGUAGE BangPatterns #-}
@@ -46,7 +47,7 @@ main = do
     opts <- getRecord "subsample, Gregory W. Schwartz.\
                       \ Subsample data from a uniform distribution so all\
                       \ statuses for all entities have the same\
-                      \ number of samples."
+                      \ number of samples. Takes csv stdin."
 
     contents <- BL.getContents
 
