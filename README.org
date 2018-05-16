@@ -1,0 +1,18 @@
+* subsample
+
+#+BEGIN_EXAMPLE
+subsample, Gregory W. Schwartz. Subsample data from a uniform distribution so
+all statuses for all entities have the same number of samples.
+
+Usage: subsample [--sampleCol TEXT] [--statusCol TEXT] [--n INT]
+
+Available options:
+  -h,--help                Show this help text
+  --sampleCol TEXT         ([name] | COLUMN) The column containing the names of
+                           the samples.
+  --statusCol TEXT         ([status] | COLUMN) The column containing the
+                           statuses of the entities.
+  --n INT                  ([MINIMUM] | INT) The number of samples to pull from
+                           each status. The default value is the sample number
+                           of the status with the smallest number of samples.
+#+END_EXAMPLE
